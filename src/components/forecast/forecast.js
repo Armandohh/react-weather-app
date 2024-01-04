@@ -1,20 +1,22 @@
 import "./forecast.css"
-
 import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from "react-accessible-accordion";
 
+//array of week days
 const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const Forecast = ({data}) => {
+    //get today's day
     const dayInAWeek = new Date().getDay();
-    const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
 
-    console.log(forecastDays);
+    ///create an array of forecast days starting from the current day
+    const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
+    
     return (
         <>
             <label className="title"> Daily </label>
             <Accordion allowZeroExpanded>
                 {data.list.slice(0, 7).map((item, idx) =>(
-                    <AccordionItem key = {idx}> 
+                    <AccordionItem keay = {idx}> 
                         <AccordionItemHeading>
                             <AccordionItemButton>
                                 <div className="daily-item">
