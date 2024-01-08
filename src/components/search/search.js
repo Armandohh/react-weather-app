@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GEO_API_URL, geoAPIOptions } from "../../api";
 
@@ -6,7 +6,10 @@ import { GEO_API_URL, geoAPIOptions } from "../../api";
 const Search = ({ onSearchChange }) => {
 
     //State to hold the current search value entered by the user
-    const [search, setSearch] = useState(null);
+    const [search, setSearch] = useState({
+        value: "34.0522 -118.2437", // Los Angeles coordinates
+        label: "Los Angeles, US",
+      });
 
     //Event handler when the search value changes
     const handleOnChange = (searchData) => {
@@ -22,7 +25,7 @@ const Search = ({ onSearchChange }) => {
         try {
 
             //send a request to GeoDB Cities API to fetcgh cities with a min population of a million
-            const response = await fetch(`${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${searchValue}`, geoAPIOptions);
+            const response = await fetch(`${GEO_API_URL}/cities?minPopulation=10000&namePrefix=${searchValue}`, geoAPIOptions);
             
             ///parse the json content from the response 
             const result = await response.json();
@@ -52,6 +55,13 @@ const Search = ({ onSearchChange }) => {
                 hasMore: false,
             };
         }
+
+
+      //call the useEffect hook to render Los Angeles' weather by default when the website launches
+      useEffect(() => {
+        // Trigger the handleOnChange function with the default value when the component mounts
+        handleOnChange(search);
+      }, [search]);
     };
 
     return (
