@@ -47,7 +47,8 @@
 }
 
 .weather-icon {
-    width: 150px;
+    margin-right: 50px;
+    width: 100px;
 }
 
 .temperature {

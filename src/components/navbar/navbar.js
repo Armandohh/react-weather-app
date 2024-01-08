@@ -5,11 +5,9 @@ const Navbar = ({onSearchChange}) => {
     return (
         <nav>
             <div className='navBarTitle'> ClimaSphere </div>
-            <ul>
-                <li>
-                <Search onSearchChange={onSearchChange} />
-                </li>
-            </ul>
+            <div className='SearchWrapper'>
+              <Search onSearchChange={onSearchChange} />
+            </div>        
         </nav>
     );
 };
