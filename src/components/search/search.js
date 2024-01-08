@@ -55,14 +55,13 @@ const Search = ({ onSearchChange }) => {
                 hasMore: false,
             };
         }
-
-
-      //call the useEffect hook to render Los Angeles' weather by default when the website launches
-      useEffect(() => {
+    };
+    
+    //call the useEffect hook to render Los Angeles' weather by default when the website launches
+    useEffect(() => {
         // Trigger the handleOnChange function with the default value when the component mounts
         handleOnChange(search);
       }, [search]);
-    };
 
     return (
         //asyncpaginate component is used to create an asynchrnous, paginated dropddown input for cities
