@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
 body {
   margin: 0;
-  font-family: "Roboto", Arial !important;
+  font-family: "Nunito Sans", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(-45deg, #87CEEB, #ADD8E6, #87CEEB, #ADD8E6);	
+  background: linear-gradient(-45deg, #87CEEB, #ADD8E6, #FFD700, #FFA500, #FFF);	
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 100s ease infinite;
 }
 
 code {

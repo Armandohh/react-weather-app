@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Light white background with some transparency */
+}
+.navBarTitle {
+    color: black;
+    font-size: 40px;
+    margin-left: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    margin: 0 50px;
+}

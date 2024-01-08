@@ -1,4 +1,5 @@
 import './App.css';
+import Navbar from './components/navbar/navbar';
 import Search from './components/search/search';
 import CurrentWeather from './components/current-weather/current-weather';
 import Forecast from './components/forecast/forecast';
@@ -39,7 +40,7 @@ function App() {
   //render the main app componenet
   return (
     <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
+      <Navbar onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather}/>}
       {forecast && <Forecast data={forecast}/>}
     </div>
