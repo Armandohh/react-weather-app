@@ -1,6 +1,6 @@
 import { useState, useEffect} from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GEO_API_URL, geoAPIOptions } from "../../api";
+import { GEODB_API_URL, geoAPIOptions } from "../../api";
 
 //functional component declared
 const Search = ({ onSearchChange }) => {
@@ -12,20 +12,20 @@ const Search = ({ onSearchChange }) => {
       });
 
     //Event handler when the search value changes
-    const handleOnChange = (searchData) => {
+    const handleOnChange = (selectedSearchValue) => {
         //update local state with new search value
-        setSearch(searchData);
+        setSearch(selectedSearchValue);
 
         //call the onSearchChange prop passed from parent component (Search)
         //pass the search data to notify the parent about the saerch Change
-        onSearchChange(searchData);
+        onSearchChange(selectedSearchValue);
     }
 
     const loadOptions = async (searchValue) => {
         try {
 
-            //send a request to GeoDB Cities API to fetcgh cities with a min population of a million
-            const response = await fetch(`${GEO_API_URL}/cities?minPopulation=10000&namePrefix=${searchValue}`, geoAPIOptions);
+            //send a request to GeoDB Cities API to fetch cities with a min population of a million
+            const response = await fetch(`${GEODB_API_URL}/cities?minPopulation=10000&namePrefix=${searchValue}`, geoAPIOptions);
             
             ///parse the json content from the response 
             const result = await response.json();

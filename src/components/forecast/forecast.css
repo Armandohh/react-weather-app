@@ -11,10 +11,10 @@
 }
 
 .daily-item {
-    background-color: hsla(0, 0%, 100%, 0.735);
+    background-color: rgba(255, 255, 255, 0.879); 
     border-radius: 8px;
-    height: 40px;
-    margin: 15px;
+    height: 60px;
+    margin: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -44,7 +44,7 @@
 }
 
 .daily-details-grid {
-    background-color: hsla(0, 0%, 100%, 0.735);
+    background-color: rgba(255, 255, 255, 0.879); 
     border-radius: 8px;
     padding: 5px 15px;
     margin: 25px 25px;

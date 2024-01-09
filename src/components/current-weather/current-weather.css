@@ -3,7 +3,7 @@
     border-radius: 8px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     color: #212121;
-    background-color: hsla(0, 0%, 100%, 0.735);
+    background-color: rgba(255, 255, 255, 0.879); 
     margin: 60px auto 60px auto;
     padding: 0 60px 15px 20px;
 }
